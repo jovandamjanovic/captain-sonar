@@ -8,7 +8,7 @@ import Tile from './Tile';
 const Board = ({board, moveWest, moveEast, moveNorth, moveSouth}) => {
   return (
     <div>
-        <div className={'board'}>
+        <div className={'board'} style={{width: `${Math.sqrt(board.length)*26}px`, display: 'grid', grid: `repeat(${Math.sqrt(board.length)}, 1fr) / repeat(${Math.sqrt(board.length)}, 1fr)`}}>
           {board.map((c, index) => (<Tile key={index} obstacle={c.obstacle} mine={c.potentialMine} sub={c.containsSub} />))}
         </div>
         <button onClick={moveNorth}>N</button>
